@@ -1,14 +1,14 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, View, Text, StyleSheet } from 'react-native';
-
-import { UsersRooms, Room } from '../types';
+import { ActivityIndicator, View, FlatList, StyleSheet } from 'react-native';
 
 import { useQuery } from '@apollo/client';
 import { GET_ROOMS } from '../graphql/queries';
 
-import RoomListItem from './RoomListItem';
+import { UsersRooms, Room } from '../types';
 
-export default function RoomList(): JSX.Element {
+import RoomListItem from '../components/RoomListItem';
+
+export default function HomeScreen(): JSX.Element {
   const { loading, data } = useQuery<UsersRooms>(GET_ROOMS);
 
   const renderItem = ({ item }: { item: Room }) => (
