@@ -1,9 +1,10 @@
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import RoomList from '../components/RoomList';
 
 export default function RoomsScreen() {
   return (
     <View>
-      <Text>Rooms</Text>
+      <RoomList />
     </View>
   )
 }
