@@ -9,6 +9,10 @@ export type RoomData = {
   room: Room
 }
 
+export type RoomVars = {
+  id: string
+}
+
 export type UsersRooms = {
   usersRooms: {
     rooms: Room[];

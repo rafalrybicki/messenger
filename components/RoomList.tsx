@@ -1,20 +1,18 @@
 import React from 'react';
 import { ActivityIndicator, FlatList, View, Text, StyleSheet } from 'react-native';
 
+import { UsersRooms, Room } from '../types';
+
 import { useQuery } from '@apollo/client';
 import { GET_ROOMS } from '../graphql/queries';
 
-const Item = ({ name }) => (
-  <View>
-    <Text>{name}</Text>
-  </View>
-);
+import RoomListItem from './RoomListItem';
 
-export default function RoomList() {
-  const { loading, data } = useQuery(GET_ROOMS);
+export default function RoomList(): JSX.Element {
+  const { loading, data } = useQuery<UsersRooms>(GET_ROOMS);
 
-  const renderItem = ({ item }) => (
-    <Item name={item.name} />
+  const renderItem = ({ item }: { item: Room }) => (
+    <RoomListItem id={item.id} name={item.name} />
   );
 
   if(loading) {
