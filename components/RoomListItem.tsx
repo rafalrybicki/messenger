@@ -21,7 +21,7 @@ export default function RoomListItem({ id, name }: Room): JSX.Element {
 
   return (
     <View>
-			<Text onPress={() => { navigation.navigate('Room', { id }) }}
+			<Text onPress={() => { navigation.navigate('Room', { id, name }) }}
       >
         {name}
       </Text>
