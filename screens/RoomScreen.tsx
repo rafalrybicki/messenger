@@ -1,22 +1,30 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { GET_ROOM } from '../graphql/queries';
+import { SEND_MESSAGE } from '../graphql/mutations';
 
 import { RoomData, RoomVars } from '../types';
 
+
 export default function RoomScreen({ route }): JSX.Element {
-  const { loading, data } = useQuery<RoomData, RoomVars>(GET_ROOM, {
-		variables: { id: route.params.id}
+  const id = route.params.id;
+  const { data } = useQuery<RoomData, RoomVars>(GET_ROOM, {
+		variables: { id},
+    pollInterval: 500,
 	});
+
+  const [sendMessage] = useMutation(SEND_MESSAGE);
 
   const room = data!.room;
 
   return (
     <View>
       {room.messages && room.messages.map(message => <View key={message.id}>
-        <Text>{message.body} said {message.user.firstName} {message.user.lastName}</Text>
+        <Text
+          onPress={() => sendMessage({ variables: {body: 'test3', roomId: id} }) }
+        >{message.body} said {message.user.firstName} {message.user.lastName}</Text>
         <br />	
       </View>
       )}
