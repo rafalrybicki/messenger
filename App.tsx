@@ -9,6 +9,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from "./screens/HomeScreen";
 import RoomScreen from "./screens/RoomScreen";
 import HeaderButtons from "./components/HeaderButtons";
+import RoomTitle from "./components/RoomTitle";
 import SearchIcon from './icons/SearchIcon';
 import UsersIcon from './icons/UsersIcon';
 import CallIcon from "./icons/CallIcon";
@@ -31,15 +32,23 @@ export default function App() {
             name="Rooms"
             component={HomeScreen}
             options={{
-              headerRight: () => <HeaderButtons iconOne={<SearchIcon />} iconTwo={<UsersIcon />} />
+              headerRight: () =>
+                <HeaderButtons
+                  iconOne={<SearchIcon />}
+                  iconTwo={<UsersIcon />}
+                />
             }}
           />
           <Stack.Screen
             name="Room"
             component={RoomScreen}
             options={{
-              title: 'The Widlarz Group',
-              headerRight: () => <HeaderButtons iconOne={<CallIcon />} iconTwo={<VideoCallIcon />} />
+              headerTitle: () => <RoomTitle />,
+              headerRight: () => 
+                <HeaderButtons
+                  iconOne={<CallIcon />}
+                  iconTwo={<VideoCallIcon />}
+                />
             }}
           />
         </Stack.Navigator>
