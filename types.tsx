@@ -37,3 +37,8 @@ type User = {
   email?: string;
   role?: string;
 }
+
+export type HeaderButtonsProps = {
+  iconOne: JSX.Element;
+  iconTwo: JSX.Element;
+}

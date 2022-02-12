@@ -1,6 +1,5 @@
 import { ApolloProvider } from "@apollo/client";
 import client from './graphql/client';
-
 import Theme from "./styles/theme";
 import CommonStyle from "./styles/commonStyle"; 
 
@@ -9,6 +8,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from "./screens/HomeScreen";
 import RoomScreen from "./screens/RoomScreen";
+import HeaderButtons from "./components/HeaderButtons";
+import SearchIcon from './icons/SearchIcon';
+import UsersIcon from './icons/UsersIcon';
+import CallIcon from "./icons/CallIcon";
+import VideoCallIcon from "./icons/VideoCallIcon";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,8 +27,21 @@ export default function App() {
             headerTitleStyle: CommonStyle.HeaderTitleStyle,
           }}
         >
-          <Stack.Screen name="Rooms" component={HomeScreen} />
-          <Stack.Screen name="Room" component={RoomScreen} options={{ title: 'The Widlarz Group' }} />
+          <Stack.Screen
+            name="Rooms"
+            component={HomeScreen}
+            options={{
+              headerRight: () => <HeaderButtons iconOne={<SearchIcon />} iconTwo={<UsersIcon />} />
+            }}
+          />
+          <Stack.Screen
+            name="Room"
+            component={RoomScreen}
+            options={{
+              title: 'The Widlarz Group',
+              headerRight: () => <HeaderButtons iconOne={<CallIcon />} iconTwo={<VideoCallIcon />} />
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </ApolloProvider>
