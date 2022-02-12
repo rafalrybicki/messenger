@@ -19,10 +19,10 @@ const CommonStyle = StyleSheet.create({
     borderBottomLeftRadius: '24px',
     borderBottomRightRadius: '24px',
   },
-  HeaderTintColor: colors.plum500,
   HeaderTitleStyle: {
     fontSize: 36,
     fontWeight: 700,
+    color: colors.plum500
   }
 });
 

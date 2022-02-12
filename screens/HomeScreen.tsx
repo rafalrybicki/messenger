@@ -20,7 +20,7 @@ export default function HomeScreen(): JSX.Element {
   }
 
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         data={data?.usersRooms.rooms}
         renderItem={renderItem}
@@ -29,3 +29,9 @@ export default function HomeScreen(): JSX.Element {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 36,
+  }
+});

@@ -1,7 +1,10 @@
 import { ApolloProvider } from "@apollo/client";
 import client from './graphql/client';
 
-import { NavigationContainer } from '@react-navigation/native';
+import Theme from "./styles/theme";
+import CommonStyle from "./styles/commonStyle"; 
+
+import { NavigationContainer  } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from "./screens/HomeScreen";
@@ -12,19 +15,12 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <ApolloProvider client={client}>
-      <NavigationContainer>
+      <NavigationContainer theme={Theme}>
         <Stack.Navigator
           screenOptions={{
-            headerStyle: {
-              backgroundColor: '#B6DEFD',
-              borderBottomLeftRadius: '24px',
-              borderBottomRightRadius: '24px',
-            },
-            headerTintColor: '#5603AD',
-            headerTitleStyle: {
-              fontWeight: 700,
-              fontSize: 28
-            }
+            headerStyle: CommonStyle.HeaderStyle,
+            headerTintColor: '#5603ad',
+            headerTitleStyle: CommonStyle.HeaderTitleStyle,
           }}
         >
           <Stack.Screen name="Rooms" component={HomeScreen} />

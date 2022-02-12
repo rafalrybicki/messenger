@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 
 import { useQuery, useMutation } from '@apollo/client';
 import { GET_ROOM } from '../graphql/queries';
@@ -21,12 +21,13 @@ export default function RoomScreen({ route }): JSX.Element {
 
   return (
     <View>
-      {room.messages && room.messages.map(message => <View key={message.id}>
-        <Text
-          onPress={() => sendMessage({ variables: {body: 'test3', roomId: id} }) }
-        >{message.body} said {message.user.firstName} {message.user.lastName}</Text>
-        <br />	
-      </View>
+      {room.messages && room.messages.map(message =>
+        <View key={message.id}>
+          <Text
+            onPress={() => sendMessage({ variables: {body: 'test4', roomId: id} }) }
+          >{message.body} said {message.user.firstName} {message.user.lastName}</Text>
+          <br />	
+        </View>
       )}
     </View>
   )
