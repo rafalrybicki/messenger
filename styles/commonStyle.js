@@ -5,14 +5,7 @@ import colors from './colors';
 const CommonStyle = StyleSheet.create({
   BodyText: {
     fontSize: 14,
-  },
-  Heading1: {
-    fontSize: 36,
-    fontWeight: 700,
-  },
-  Heading3: {
-    fontSize: 15,
-    fontWeight: 500,
+    fontFamily: 'Poppins_400Regular'
   },
   HeaderStyle: {
     backgroundColor: colors.blue300,
@@ -21,7 +14,8 @@ const CommonStyle = StyleSheet.create({
   },
   HeaderTitleStyle: {
     fontSize: 36,
-    fontWeight: 700,
+    fontWeight: '700',
+    fontFamily: 'Poppins_700Bold',
     color: colors.plum500
   }
 });

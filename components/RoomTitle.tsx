@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
   name: {
     color: colors.plum500,
     fontWeight: '600',
+    fontFamily: 'Poppins_600SemiBold'
   },
   status: {
     color: colors.white

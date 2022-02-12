@@ -30,7 +30,7 @@ export default function RoomListItem({ id, name }: Room): JSX.Element {
         <UserIcon />
       </View>
 			<Text
-        style={[CommonStyle.Heading3, styles.roomName]}
+        style={styles.roomName}
         onPress={() => { navigation.navigate('Room', { id, name }) }}
         ellipsizeMode='tail'
         numberOfLines={1}
@@ -65,6 +65,9 @@ const styles = StyleSheet.create({
     height: 64
   },
   roomName: {
-    marginBottom: 5
+    marginBottom: 5,
+    fontSize: 15,
+    fontWeight: '500',
+    fontFamily: 'Poppins_500Medium'
   }
 });

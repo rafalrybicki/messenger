@@ -7,7 +7,6 @@ import { SEND_MESSAGE } from '../graphql/mutations';
 
 import { RoomData, RoomVars } from '../types';
 
-
 export default function RoomScreen({ route }): JSX.Element {
   const id = route.params.id;
   const { data } = useQuery<RoomData, RoomVars>(GET_ROOM, {
