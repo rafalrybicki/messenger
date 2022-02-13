@@ -7,6 +7,11 @@ export const GET_ROOMS = gql`
         id
         name
       }
+      user {
+        id
+        firstName
+        lastName
+      }
     }
   }
 `;
@@ -20,6 +25,7 @@ export const GET_ROOM = gql`
         body
         insertedAt
         user {
+          id
           firstName
           lastName
         }

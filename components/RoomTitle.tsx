@@ -10,7 +10,7 @@ export default function RoomTitle(): JSX.Element {
     <View style={styles.container}>
       <TWGIcon / >
       <Text style={styles.name}>The Widlarz Group</Text>
-      <Text style={[CommonStyle.BodyText, styles.status]}>Active now???</Text>
+      <Text style={[CommonStyle.BodyText, CommonStyle.TextColorWhite]}>Active now???</Text>
     </View>
   )
 };
@@ -22,9 +22,7 @@ const styles = StyleSheet.create({
   name: {
     color: colors.plum500,
     fontWeight: '600',
-    fontFamily: 'Poppins_600SemiBold'
-  },
-  status: {
-    color: colors.white
+    fontFamily: 'Poppins_600SemiBold',
+    marginTop: 3
   }
 });

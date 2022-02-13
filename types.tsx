@@ -16,6 +16,7 @@ export type RoomVars = {
 export type UsersRooms = {
   usersRooms: {
     rooms: Room[];
+    user: User;
   }
 }
 
@@ -41,4 +42,9 @@ type User = {
 export type HeaderButtonsProps = {
   iconOne: JSX.Element;
   iconTwo: JSX.Element;
+}
+
+export type MessageProps = {
+  body: string;
+  messageType: 'sent' | 'received';
 }

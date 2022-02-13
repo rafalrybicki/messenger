@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableHighlight , StyleSheet } from 'react-native';
+import { View, TouchableOpacity , StyleSheet } from 'react-native';
 
 import { HeaderButtonsProps } from '../types';
 
@@ -8,12 +8,12 @@ export default function HeaderButtons({ iconOne, iconTwo }: HeaderButtonsProps):
 
   return (
     <View style={styles.container}>
-      <TouchableHighlight style={styles.svg} onPress={handleOnPress}>
+      <TouchableOpacity style={styles.svg} onPress={handleOnPress}>
         {iconOne}
-      </TouchableHighlight>
-      <TouchableHighlight onPress={handleOnPress}>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={handleOnPress}>
         {iconTwo}
-      </TouchableHighlight>
+      </TouchableOpacity>
     </View>
   )
 }

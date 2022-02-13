@@ -5,7 +5,11 @@ import colors from './colors';
 const CommonStyle = StyleSheet.create({
   BodyText: {
     fontSize: 14,
-    fontFamily: 'Poppins_400Regular'
+    fontFamily: 'Poppins_400Regular',
+    color: colors.black
+  },
+  TextColorWhite: {
+    color: colors.white
   },
   HeaderStyle: {
     backgroundColor: colors.blue300,

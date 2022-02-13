@@ -20,7 +20,6 @@ export default function TWGIcon(): JSX.Element {
 const styles = StyleSheet.create({
   svg: {
     position: 'absolute',
-    top: -2,
     left: -20
   }
 });

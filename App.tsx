@@ -18,6 +18,7 @@ import SearchIcon from './icons/SearchIcon';
 import UsersIcon from './icons/UsersIcon';
 import CallIcon from "./icons/CallIcon";
 import VideoCallIcon from "./icons/VideoCallIcon";
+import colors from './styles/colors';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,7 +40,7 @@ export default function App() {
         <Stack.Navigator
           screenOptions={{
             headerStyle: CommonStyle.HeaderStyle,
-            headerTintColor: '#5603ad',
+            headerTintColor: colors.plum500,
             headerTitleStyle: CommonStyle.HeaderTitleStyle,
           }}
         >

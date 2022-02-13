@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 
 import { Room, RoomData, RoomVars } from '../types';
 
@@ -25,13 +25,15 @@ export default function RoomListItem({ id, name }: Room): JSX.Element {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.svg}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => { navigation.navigate('Room', { id, name }) }}
+    >
+      <View style={styles.userIcon}>
         <UserIcon />
       </View>
 			<Text
         style={styles.roomName}
-        onPress={() => { navigation.navigate('Room', { id, name }) }}
         ellipsizeMode='tail'
         numberOfLines={1}
       >
@@ -42,7 +44,7 @@ export default function RoomListItem({ id, name }: Room): JSX.Element {
         ellipsizeMode='tail'
         numberOfLines={1}
       >{data?.room.messages![0].body}</Text>
-    </View>
+    </TouchableOpacity>
   )
 }
 
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
     paddingLeft: 96,
     paddingRight: 37
   },
-  svg: {
+  userIcon: {
     position: 'absolute',
     left: 15,
     top: 14,
