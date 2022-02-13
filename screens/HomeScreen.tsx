@@ -19,6 +19,8 @@ export default function HomeScreen(): JSX.Element {
     return <ActivityIndicator size="large" />
   }
 
+  console.log(data)
+
   return (
     <View style={styles.container}>
       <FlatList
