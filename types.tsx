@@ -24,11 +24,16 @@ export type Rooms = {
   rooms: Room[];
 }
 
-type Message = {
+export type Message = {
   id: string;
   body: string;
   insertedAt: string;
   user: User;
+}
+
+export type NewMessage = {
+  roomId: string;
+  body: string
 }
 
 type User = {
@@ -47,4 +52,8 @@ export type HeaderButtonsProps = {
 export type MessageProps = {
   body: string;
   messageType: 'sent' | 'received';
+}
+
+export type MessageInputProps = {
+  roomId: string
 }

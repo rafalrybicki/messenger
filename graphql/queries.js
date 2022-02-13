@@ -19,6 +19,7 @@ export const GET_ROOMS = gql`
 export const GET_ROOM = gql`
   query GetRoom($id: String!){
 		room(id: $id) {
+      id
 			name
       messages {
         id
