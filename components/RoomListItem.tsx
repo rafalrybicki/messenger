@@ -13,6 +13,8 @@ import colors from '../styles/colors';
 
 import UserIcon from '../icons/UserIcon';
 
+import TimeAgo from 'react-timeago';
+
 export default function RoomListItem({ id, name }: Room): JSX.Element {
   const navigation = useNavigation();
 
@@ -44,6 +46,17 @@ export default function RoomListItem({ id, name }: Room): JSX.Element {
         ellipsizeMode='tail'
         numberOfLines={1}
       >{data?.room.messages![0].body}</Text>
+      <TimeAgo
+        date={data?.room.messages![0].insertedAt!}
+        style={{
+          color: '#9FA2B2',
+          fontSize: 13,
+          fontFamily: 'Poppins_400Regular',
+          position: 'absolute',
+          top: 8,
+          right: 16
+        }}
+      />
     </TouchableOpacity>
   )
 }
@@ -67,7 +80,7 @@ const styles = StyleSheet.create({
     height: 64
   },
   roomName: {
-    marginBottom: 5,
+    paddingTop: 8,
     fontSize: 15,
     fontWeight: '500',
     fontFamily: 'Poppins_500Medium'

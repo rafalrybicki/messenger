@@ -11,7 +11,7 @@ import MessageInput from '../components/MessageInput';
 export default function RoomScreen({ route }): JSX.Element {
   const id = route.params.id;
   const { data } = useQuery<RoomData, RoomVars>(GET_ROOM, {
-		variables: { id},
+		variables: { id },
     pollInterval: 500,
 	});
 
